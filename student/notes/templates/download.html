@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes</title>
+
+    <style>
+        table {
+          font-family: arial, sans-serif;
+          border-collapse: collapse;
+          width: 100%;
+        }
+        
+        td, th {
+          border: 1px solid #dddddd;
+          text-align: center;
+          padding: 8px;
+        }
+    </style>
+    
+
+</head>
+<body>
+    <h1>Notes Repo</h1>
+
+    <table>
+        <tr>
+          <th>File Name</th>
+          <th>View Link</th>
+          <th>Download Link</th>
+        </tr>
+
+        {% for a in files %}
+        
+        <tr>
+            <td>{{ a.file_name }} - <small><small>{{ a.time }}</small></small></td>
+            <td><a href="{{ a.file.url }}"> View </a></td>
+            <td><a href="{{ a.file.url }}" download> Download </a></td>
+        </tr>
+
+        {% endfor %}
+
+        
+      </table>
+
+    
+
+</body>
+</html>

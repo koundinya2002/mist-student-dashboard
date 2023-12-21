@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+
+<h1>Lost & Found!!</h1>
+
+<p><small><b>To submit or to claim a lost item, please contact your department admin. Also proof required to claim the lost item.</b></small></p>
+<br>
+
+<table>
+  <tr>
+    <th>Item</th>
+    <th>Found at</th>
+    <th>Description</th>
+  </tr>
+
+  {% for a in item %}
+
+  <tr>
+    <td><img src="{{ a.item_photo.url }}"></td>
+    <td>{{ a.item_name }}</td>
+    <td>{{ a.item_desc }} - <small><small>{{ a.time }}</small></td>
+  </tr>
+
+  {% endfor %}
+</table>
+
+</body>
+</html>
+

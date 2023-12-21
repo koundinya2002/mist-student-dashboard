@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events Gallery</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #000;
+      display: flex;
+      flex-direction: column;
+    }
+    .title {
+      font-size: 24px;
+      color: #fff;
+      margin: 20px 0;
+    }
+    .image-container {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 10px 0;
+    }
+    .image-wrapper {
+      margin: 10px;
+      width: calc(25% - 20px); /* 4 items per row with 20px gap */
+      max-width: 300px;
+      height: 350px;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease-in-out;
+    }
+    .image-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .image-wrapper:hover {
+      transform: scale(1.1);
+    }
+    
+h4{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+  </style>
+</head>
+<body>
+  <h4 class="title">Gallery</h4>
+  
+  
+
+    
+    
+    <div class="image-container">
+      
+      {% for a in snaps  %}
+        <div class="image-wrapper">
+          <img src="{{ a.snap.url }}" alt="NAAC Event Image 3">
+        </div>
+      {% endfor %}
+
+    </div>
+
+
+
+  
+
+</body>
+</html>
