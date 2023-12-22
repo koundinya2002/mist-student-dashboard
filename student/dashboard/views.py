@@ -58,9 +58,10 @@ def join_classroom(request):
 @login_required
 def create_notifications(request):
     if request.method == "POST":
-        text = request.POST.get("text")
-        notifications = Notifications.objects.create(text=text)
-        notifications.save()
+        name = request.POST["name"]
+        file2 = request.FILES["file"]
+        document = Notifications.objects.create(file_name=name, file=file2)
+        document.save()
         return render(request, "dashboard/notified.html")
     return render(request, "dashboard/create_notification.html")
 
@@ -69,5 +70,5 @@ def create_notifications(request):
 def notify(request):
     notifications = Notifications.objects.all()
     return render(request, "dashboard/notifications.html", {
-        "files": notifications
+        "files": notifications,
     })

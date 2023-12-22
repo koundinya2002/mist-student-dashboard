@@ -22,17 +22,20 @@
 
 </head>
 <body>
-    <h1>Get Notified</h1>
+    <h1>Notifications</h1>
+ 
 
     <table>
         <tr>
-          <th>Notifications</th>
+          <th>File Name</th>
+          <th>Download Link</th>
         </tr>
 
         {% for a in files %}
-
+        
         <tr>
-            <td>{{ a.text }} <small> - published at {{ a.time }}</small>
+            <td>{{ a.file_name }} - <small><small>{{ a.time }}</small></small></td>
+            <td><a href="{{ a.file.url }}" download> Download </a></td>
         </tr>
 
         {% endfor %}
